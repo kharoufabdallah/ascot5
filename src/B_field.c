@@ -23,7 +23,7 @@
 #include "Bfield/B_3DS.h"
 #include "Bfield/B_STS.h"
 #include "Bfield/B_TC.h"
-
+// test forked ASCOT5
 /**
  * @brief Free allocated resources
  *
