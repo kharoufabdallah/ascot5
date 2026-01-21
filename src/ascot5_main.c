@@ -20,7 +20,7 @@
  * field, plasma, wall, and neutral data along with markers and options. See
  * hdf5_input.c for details. This program uses the input fields that are marked
  * as active (the HDF5 file can contain multiple instances of same input types
- * but only the active one is used here).
+ * but only the active one is used here). // there is no hdf5_input.c file. see hdf5io dir with all hdf5-related files
  *
  * The results are stored under /results/ group in output HDF5 file. The group
  * is created if one does not exists. For each run a specific "run" group is
@@ -30,7 +30,7 @@
  * and at least the marker initial and end states if the simulation succeeded.
  * Also any other diagnostic data that was used is stored there.
  *
- * This program uses MPI by dividing the number of markers equally to all MPI
+ * This program uses MPI by dividing the number of markers equally to all MPI // markers == particles representation
  * processes. The markers are not suffled so user is advised to do it beforehand
  * to ensure work is evenly distributed. A single MPI process can be simulated
  * with:
