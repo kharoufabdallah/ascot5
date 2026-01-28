@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Slurm job options (name, compute nodes, job time)
+#SBATCH --ntasks=4
+#SBATCH --nodes=1
+#SBATCH --job-name=sandpile
+#SBATCH --time=00:20:00
+#SBATCH --output=%x-%j.out
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=standard
+#SBATCH --tasks-per-node=128
+# Replace [budget code] below with your budget code
+# This is commented out so it will use the default project budget
+#SBATCH --account=m25oc-s2778076
+#SBATCH --qos=short
+export OMP_NUM_THREADS=1
+
+in=$1
+
+# Use "srun" to launch the job
+srun --unbuffered --distribution=block:block --hint=nomultithread ./build/ascot5_main $in 
+
+# srun --time=00:10:00 --partition=standard --qos=short --unbuffered --distribution=block:block --hint=nomultithread --nodes=1 --ntasks=4 --account=m25oc-s2239723 ./ascot5_main --in=hdf5file
